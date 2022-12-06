@@ -25,11 +25,14 @@
 -변수에 입력하면 직접 대입, Scanner로 외부에서부터 데이터를 받아들임.
 -Scanner에 잘못된 타입(변수 타입)을 입력하면 입력 구문 자체가 무시되서 실행되지 않는다.
 
+Char 타입을 사용하기 위해 String 타입으로 입력받은 
+Scanner의 문자열을 한글자만 선택해서 char 타입으로 변환하는 것. 
+(0)이라는 건 입력받은 문자열(배열)의 첫번째 문자이다.
 -Char Type Scanner: .next().charAt(0);
 (Example: Alph = sc.next().charAt(0);)
 
 -조건문이나 switch 등에 사용하는 Scanner 변수는 다른 용도의 변수와 함께 쓰지않고 새로 생성해서 사용한다.
--Print 함수의 종류
+
 
 
 
