@@ -60,10 +60,12 @@ storage = str.storage.charAt(3);
 사용자가 만든 프로그램: Source program(원시 프로그램) >> 컴파일(번역) >> 2진법
 (자바: src(사용자 코드; .java) / bin(이진법으로 변환된 코드들; .class)
 
--특정 자릿수까지 문자를 잘라서 저장할 수 있는 메서드: substring
->> 문자열.substring(자를 첫 구간, 자를 길이); 만큼의 문자가 잘린다.
-String str;
-String str2 = 0112014
-str = str2.substring(1,3); >> str: 112
-가 된다.
+-문자열에서 특정 자릿수의 문자를 잘라서 저장할 수 있는 메서드: substring
+Param 1: 자를 첫번째 문자의 자릿수 
+Param 2: 자를 범위, It cuts to before the second parameter. (Starting index: 0) 
+Examples: ABCDEFG
+Index: 0, 5 >> ABCDE) (Index: 2, 4 >>  CD
+.substring(1, 5); >> BCDE / .substring(0, 5) >> ABCDE 
+for 반복문의 <, > 구문과 비슷하다. 
+<for(int i =0; i<5; i++)>
 
