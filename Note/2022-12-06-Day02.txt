@@ -82,4 +82,6 @@ for 반복문의 <, > 구문과 비슷하다.
 (byte a = 128 >> Exception; Can not convert int type to byte, 크기가 초과했으니 int로 변경할 것. => 이게 오버플로우이다.)
 
 
-
+-비트연산자 & | ^ ~ << >>
+-삼항연산자 (A==B?C:D) A와B의 조건문이 True, C 실행 / False, D 실행.
+(예: boolean A: 10 > 5 ? true : false; )  
