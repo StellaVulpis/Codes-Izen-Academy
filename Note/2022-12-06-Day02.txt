@@ -58,5 +58,5 @@ storage = str.storage.charAt(3);
 
 
 사용자가 만든 프로그램: Source program(원시 프로그램) >> 컴파일(번역) >> 2진법
-
+(자바: src(사용자 코드; .java) / bin(이진법으로 변환된 코드들; .class)
 
