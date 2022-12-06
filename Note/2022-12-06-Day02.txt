@@ -16,4 +16,4 @@
 -java.io: 입출력에 관련된 모든 기능이 들어있음.
 -API: Field(변수) / Method(Function)
 -Field/Method 타입이 static이면 객체를 만들수가 없음. >> 그 자체가 객체임.
--
+-java.lang.system: 필드/메서드가 전부 static으로 되어있다.
