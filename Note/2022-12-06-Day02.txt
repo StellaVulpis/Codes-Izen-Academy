@@ -14,3 +14,6 @@
 -클래스 이름의 첫자는 대문자(문법적 오류는 아니나 약속된 규칙)
 -io: input/output의 약자
 -java.io: 입출력에 관련된 모든 기능이 들어있음.
+-API: Field(변수) / Method(Function)
+-Field/Method 타입이 static이면 객체를 만들수가 없음. >> 그 자체가 객체임.
+-
