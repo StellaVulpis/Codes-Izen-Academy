@@ -57,6 +57,6 @@ storage = str.storage.charAt(3);
 >> String으로 만들어낸 변수는 객체(Object)로 생각하면 된다.
 
 
-
+사용자가 만든 프로그램: Source program(원시 프로그램) >> 컴파일(번역) >> 2진법
 
 
