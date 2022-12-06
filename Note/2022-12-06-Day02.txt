@@ -69,3 +69,15 @@ Index: 0, 5 >> ABCDE) (Index: 2, 4 >>  CD
 for 반복문의 <, > 구문과 비슷하다. 
 <for(int i =0; i<5; i++)>
 
+
+-Date today = new Date();
+>> Date: class
+>> today: 객체
+>> (): 생성자 (Name() >> 생성자, void Name() >> 메서드; 둘이 비슷하니 헷갈리지 말 것.)
+
+-
+
+
+
+
+
