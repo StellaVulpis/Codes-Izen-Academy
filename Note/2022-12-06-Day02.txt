@@ -18,3 +18,5 @@
 -Field/Method 타입이 static이면 객체를 만들수가 없음. >> 그 자체가 객체임.
 -System(API): 필드/메서드가 전부 static으로 되어있다.
 (System.out.println 등)
+
+-변수에 입력하면 직접 대입, Scanner로 외부에서부터 데이터를 받아들임.
