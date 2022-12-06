@@ -60,3 +60,10 @@ storage = str.storage.charAt(3);
 사용자가 만든 프로그램: Source program(원시 프로그램) >> 컴파일(번역) >> 2진법
 (자바: src(사용자 코드; .java) / bin(이진법으로 변환된 코드들; .class)
 
+-특정 자릿수까지 문자를 잘라서 저장할 수 있는 메서드: substring
+>> 문자열.substring(자를 첫 구간, 자를 길이); 만큼의 문자가 잘린다.
+String str;
+String str2 = 0112014
+str = str2.substring(1,3); >> str: 112
+가 된다.
+
