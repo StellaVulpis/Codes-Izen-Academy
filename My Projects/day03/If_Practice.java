@@ -73,7 +73,9 @@ public class If_Practice
 			Thread.sleep(1500);
 			System.out.print("YOUR AVERAGE SCORE IS "
 			+dc.format(avrg));
-			System.out.printf("\n\n\n");
+                        // System.out.printf("YOUR AVERAGE SCORE IS %.1f", avrg);
+			// Is also acceptable.
+                        System.out.printf("\n\n\n");
 			Thread.sleep(1500);
 			System.out.print("FINALLY, YOUR GRADE IS");
 			System.out.print(".");
