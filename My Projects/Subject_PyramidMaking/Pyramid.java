@@ -16,18 +16,15 @@ class MyCls
 	void PyramidMaker()
 	{
 		// Algorithem: 5 - 3 - 1 | 1 + 3 + 5
-		for(int i=1;i<=3;i++)
-		{
-			for(int a =1; a<=i; a++)
-			{
-				// Working on it
-				
-			}
-			for(int b =1; b<=i; b++)
-			{
-				// Working on it
-			}
-		System.out.println();
-		}
+		// i*2-1 >> 1 3 5 7 9
+		// 11-(i*2) >> => 9 7 5 3 1
+        for(int i = 1;i>=5;i++)
+        {
+            for(int a=1;a>=11-(i*2);a++)
+            System.out.print(" ");
+            for(int b=1;b>=(i*2)-1;b++)
+            System.out.print("*");
+        System.out.println();
+        }
 	}
 }
