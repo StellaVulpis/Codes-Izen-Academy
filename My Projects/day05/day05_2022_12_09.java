@@ -359,12 +359,13 @@ class Test
     	System.out.println("\n\n\n");
     	if(Integer.parseInt(socialN01)/1000000 > 1 || Integer.parseInt(socialN02)/10000000 > 1)
     	{
-    		LOG.log(Level.INFO, "You've typed wrong digits of registration numbers."
+    		LOG.log(Level.INFO, "You've typed too long digits of Social Secirity numbers."
     				+ "\nPlease try again.");
     	}
     	else if(SEX > 4 || SEX < 0)
     	{
-    		LOG.log(Level.INFO, "The first digit of last 7 digits you've entered was wrong,Please type the numbers between 1 to 4.");
+    		LOG.log(Level.INFO, "The first digit of last 7 digits you've entered was incorrect format,"
+			+"\nPlease type the numbers between 1 to 4.");
     	}
     	else
     	{
