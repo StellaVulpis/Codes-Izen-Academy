@@ -348,11 +348,11 @@ class Test
     	String name="NAME", sex="sex";
     	String socialN01="991234", socialN02="1234567"; // 991234-1234567
     	System.out.println("birth2Digits: "+cYear2Digits);
-    	System.out.print("이름을 입력해주세요: ");
+    	System.out.print("Enter your name: ");
     	name=sc.nextLine();
-    	System.out.print("주민번호 앞자리를 입력해주세요: ");
+    	System.out.print("Please type first 6 digits of Social Security number: ");
     	socialN01=sc.nextLine();
-    	System.out.print("주민번호 뒷자리를 입력해주세요: ");
+    	System.out.print("Please type last 7 digits of Social Security number: ");
     	socialN02=sc.nextLine();
     	birth2Digits=Integer.parseInt(socialN01.substring(0,2));
     	SEX=Integer.parseInt(socialN02.substring(0,1));
