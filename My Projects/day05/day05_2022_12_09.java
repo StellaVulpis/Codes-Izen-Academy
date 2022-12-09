@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-public class day05_2022_12_09 
+public class Main
 {
 	public static void main(String args[])
 	{
@@ -357,19 +357,24 @@ class Test
     	birth2Digits=Integer.parseInt(socialN01.substring(0,2));
     	SEX=Integer.parseInt(socialN02.substring(0,1));
     	System.out.println("\n\n\n");
-    	if(Integer.parseInt(socialN01)/1000000 > 1 || Integer.parseInt(socialN02)/1000000 > 1)
+    	if(Integer.parseInt(socialN01)/1000000 > 1 || Integer.parseInt(socialN02)/10000000 > 1)
     	{
     		LOG.log(Level.INFO, "You've typed wrong digits of registration numbers."
     				+ "\nPlease try again.");
     	}
+    	else if(SEX > 4 || SEX < 0)
+    	{
+    		LOG.log(Level.INFO, "The first digit of last 7 digits you've entered was wrong,Please type the numbers between 1 to 4.");
+    	}
     	else
     	{
-	    		if(birthYear < 2000)
+	    		if(birth2Digits > cYear2Digits)
 		    	{
 		    		birthYear = birth2Digits+1900;
 		    		age=currentYear-birthYear;	
 		    	}
-		    	if(birth2Digits >= cYear2Digits)
+// Skip persons who was born before 1922(Over 100 years old) due to the average life span.
+		    	else if(birth2Digits <= cYear2Digits)
 		    	{
 		    		birthYear = birth2Digits+2000;
 		    		age=currentYear-birthYear;
@@ -385,25 +390,9 @@ class Test
 	    	System.out.println("Your Social Security number: "+socialN01+" - "+socialN02);
 	    	System.out.println("Your sex: " +sex);
 	    	System.out.println("Your age: "+age+" years old\n");
-	    	
 	    	System.out.println("--------------------------------------------------");
 	    	System.out.println("\n\nOkay, Goodbye!");
 	    	sc.close();
     	}
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
     }
 }
