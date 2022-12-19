@@ -1,11 +1,14 @@
 package day11;
 public class ArrayList_Data 
 {
-	String name, grade, ans;
+	String name, grade, ans, sel;
 	int kor,eng,math;
 	double total, avrg;
 	
-	public ArrayList_Data() {}
+	public ArrayList_Data() 
+	{
+	    ans=" ";
+	}
 	public ArrayList_Data(String name, int kor, int eng, int math) 
 	{
 		super();
@@ -22,6 +25,14 @@ public class ArrayList_Data
 	public void setAns(String ans) 
 	{
 		this.ans = ans;
+	}
+	public String getSel()
+	{
+	    return sel;
+	}
+	public void setSel(String sel)
+	{
+	    this.sel=sel;
 	}
 	public String getName() {
 		return name;
@@ -65,8 +76,4 @@ public class ArrayList_Data
 	public void setAvrg(double avrg) {
 		this.avrg = avrg;
 	}
-	
-	
-	
-	
 }
