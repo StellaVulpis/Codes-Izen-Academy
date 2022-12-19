@@ -64,24 +64,34 @@ public class ArrayList_DAO
 			if(ard.ans.equals("NO")||ard.ans.equals("No")||ard.ans.equals("no")
 				|| ard.ans.equals("아니요") || ard.ans.equals("아니오"))
 			{
-				System.out.println("종료되었습니다.");
-				return;
+				System.out.println("종료되었습니다.");				return;
 			}
 			else
 			{
 				System.out.println("서비스를 선택해주세요.");
 				ard.setAns(in.scanfStr("1. 입력\n2. 출력\n3. 종료"));
-				
 				for(;;)
 				{
-					
-					In();
-					Out();
+					if(ard.ans.equals("1") || ard.ans.equals("입력"))
+						In();
+					else if(ard.ans.equals("2") || ard.ans.equals("출력"))
+						Out();
+					else if(ard.ans.equals("3") || ard.ans.equals("종료"))
+					{
+						System.out.println("종료되었습니다.");
+						return;
+					}
+					else
+					{
+						System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+						break;
+					}
 					count++;
 				}
 			}
+                  count=0;
+                  ard.ans=" "; // or null
 		}// end of while
 	}
 }
-
 
