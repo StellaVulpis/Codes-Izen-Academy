@@ -5,6 +5,11 @@ public class ArrayList_DAO
 	ArrayList<ArrayList_Data> list = new ArrayList<ArrayList_Data>();
 	ArrayList_Data ard = new ArrayList_Data();
 	ArrayList_Scanner in = new ArrayList_Scanner();
+	int count;
+	ArrayList_DAO()
+	{
+	    count=0;
+	}
 	public void In()
 	{
 		ard.setName(in.scanfStr("이름을 입력"));
@@ -42,58 +47,79 @@ public class ArrayList_DAO
 				System.out.print(a.getKor()+"\t");
 				System.out.print(a.getEng()+"\t");
 				System.out.print(a.getMath()+"\t");
-				System.out.print(a.getTotal()+"\t");
-				System.out.print(a.getAvrg()+"\t");
+				System.out.printf("%.0f\t",a.getTotal());
+				System.out.printf("%.2f\t",a.getAvrg());
 				System.out.println(a.getGrade()+"\t\n");
 			}
 	}
 	public void answer()
 	{
-		ard.setAns(in.scanfStr("Yes / No"));
+		ard.setAns(in.scanfAns("Yes / No"));
 	}
 	public void MAIN_Loop()
 	{
-		int count=0;
+	    int sel=0;
 		while(true)
 		{
 			if(count>0)
 			{
+			    System.out.println(ard.ans);
 				System.out.println("계속?");
-				answer();
+			    answer();
 			}
 			if(ard.ans.equals("NO")||ard.ans.equals("No")||ard.ans.equals("no")
 				|| ard.ans.equals("아니요") || ard.ans.equals("아니오"))
 			{
-				System.out.println("종료되었습니다.");				return;
+				System.out.println("종료되었습니다.");				
+				return;
 			}
-			else
+			else 
 			{
-				System.out.println("서비스를 선택해주세요.");
-				ard.setAns(in.scanfStr("1. 입력\n2. 출력\n3. 종료"));
 				for(;;)
 				{
-					if(ard.ans.equals("1") || ard.ans.equals("입력"))
+				    System.out.println("서비스를 선택해주세요.");
+			    	ard.setSel(in.scanfAns("1. 입력\n2. 출력\n3. 종료"));
+					if(ard.sel.equals("1") || ard.sel.equals("입력"))
+						{
+						sel=1; // To prevent getting values that is not from 0 to 3.
 						In();
-					else if(ard.ans.equals("2") || ard.ans.equals("출력"))
 						Out();
-					else if(ard.ans.equals("3") || ard.ans.equals("종료"))
+						break;
+						}
+					else if(ard.sel.equals("2") || ard.sel.equals("출력"))
 					{
+					    sel=2;
+					    if(ard.name.equals("null")||ard.kor==0||
+					    ard.eng==0||ard.math==0)
+					    {
+					        System.out.println("출력하기 전에 먼저 데이터를 입력해주세요.");
+					        break;
+					    }
+					    else
+					    {
+						Out();
+						break;
+					    }
+					}
+					else if(ard.sel.equals("3") || ard.sel.equals("종료"))
+					{
+					    sel=3;
 						System.out.println("종료되었습니다.");
 						return;
 					}
-					else
+					else if(sel<0 || sel>3)
 					{
 						System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
 						break;
 					}
-					count++;
-				}
-			}
+				}// end of for(;;)
+			} // end of else
                   // Preventing value of previous answer(selection)
                   // to be maintained on next loop.
-                  count=0;
-                  ard.ans=" "; // or null
+                  ard.sel="0";
+                  sel=0;
+                  count++;
 		}// end of while
-	}
+	} // end of MAIN_Loop()
 }
 
