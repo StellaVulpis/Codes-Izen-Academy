@@ -89,6 +89,8 @@ public class ArrayList_DAO
 					count++;
 				}
 			}
+                  // Preventing value of previous answer(selection)
+                  // to be maintained on next loop.
                   count=0;
                   ard.ans=" "; // or null
 		}// end of while
