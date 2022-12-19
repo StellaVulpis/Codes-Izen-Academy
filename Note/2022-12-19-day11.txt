@@ -1,0 +1,3 @@
+DTO: Data Transfer Object 자료입력 클래스
+DAO: Data Access Object
+
