@@ -1,3 +1,5 @@
-DTO: Data Transfer Object 자료입력 클래스
-DAO: Data Access Object
+-DTO: Data Transfer Object 자료입력 클래스
+>> 이름, 나이 입력 => 출력
+
+-DAO: Data Access Object
 
