@@ -1,1 +1,23 @@
+-클래스의 종류: 
 
+1. 일반 클래스: 사용자가 만든 클래스
+public class 클래스명
+{
+}
+
+2. 추상 클래스: 
+abstract class1
+{
+}
+
+3. 인터페이스
+
+-메소드의 종류
+1. 일반 메소드
+public void method()
+{
+//body
+}
+
+2. 추상메소드: 부모클래스로부터 상속받아야 사용가능, 선언만 하고 body가 없음; 기능이 없음.
+abstract void method();
