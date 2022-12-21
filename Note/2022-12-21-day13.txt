@@ -10,3 +10,5 @@
 -자료표현
 bit(정보의 최소 단위) >> 8bit(byte; 정보를 저장하는 단위) >> word  >> record(처리 단위)
 >> file(데이터가 한곳에 모임) >> Data Base(DB) >> Data bank 
+
+-파일 생성: C:\Data\1221.txt
