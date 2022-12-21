@@ -1,3 +1,5 @@
+※완성된 코드는 맨 아래부분을 확인.
+
 java.util.ArrayList;
 java.util.Collections;
 java.util.Comparable; 
@@ -93,3 +95,235 @@ String scStr()
 		return sc.nextInt();
 	}
 ----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+[완성 코드]
+----------------------------------------------------------------------------------------
+[Main]
+----------------------------------------------------------------------------------------
+package day13;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+class CLASS
+{
+	public static void main(String args[]) throws FileNotFoundException, IOException
+	{
+		ScoreDAO dao = new ScoreDAO();
+		final Logger LOG=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+		int sel; String ul = "-----------------------------------"
+				+ "------------------------------";
+			sel=0;
+		while(true)
+		{
+			System.out.println(ul);
+			System.out.println("1. Input data");
+			System.out.println("2. Output data");
+			System.out.println("3. Delete data");
+			System.out.println("4. Exit");
+			System.out.print("Enter: ");
+			sel=dao.ScanInt();
+			System.out.println(ul);
+			switch(sel)
+			{
+			case 1:
+				dao.In();
+				break;
+			case 2:
+				dao.Out();
+				break;
+			case 3:
+				dao.Del();
+				break;
+			case 4:
+				LOG.log(Level.INFO, "System was terminated.");
+				return;
+			}
+		}
+	}
+	}
+
+
+=========================================================================================
+----------------------------------------------------------------------------------------
+[DTO]
+----------------------------------------------------------------------------------------
+package day13;
+
+public class ScoreDTO implements Comparable<ScoreDTO>
+{
+	int rank,kor,eng,math; String name, grade;
+	@Override
+	public int compareTo(ScoreDTO o) 
+	{
+		// return o.name.compareTo(name);
+		// return name.compareTo(o.name); // Ascending
+		if(avrg > o.avrg)
+		{
+			return -1;
+		}
+		else if(avrg < o.avrg)
+		{
+			return 1;
+		}
+		else
+			return 0;
+	}
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+	double tot,avrg;
+	public double getTot() {
+		return tot;
+	}
+
+	public void setTot(double tot) {
+		this.tot = tot;
+	}
+
+	public double getAvrg() {
+		return avrg;
+	}
+
+	public void setAvrg(double avrg) {
+		this.avrg = avrg;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public int getKor() {
+		return kor;
+	}
+
+	public void setKor(int kor) {
+		this.kor = kor;
+	}
+
+	public int getEng() {
+		return eng;
+	}
+
+	public void setEng(int eng) {
+		this.eng = eng;
+	}
+
+	public int getMath() {
+		return math;
+	}
+
+	public void setMath(int math) {
+		this.math = math;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}	
+}
+=========================================================================================
+----------------------------------------------------------------------------------------
+[DAO]
+----------------------------------------------------------------------------------------
+package day13;
+import java.util.Scanner;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.BufferedReader;
+public class ScoreDAO 
+{
+	ArrayList<ScoreDTO> list = new ArrayList<ScoreDTO>();
+	final Logger LOG=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	// FileReader can't be declared in the field;Default Constructor.
+	public void In() throws FileNotFoundException, IOException
+	{
+		FileReader file = new FileReader("C:/Data/1221.txt");
+		BufferedReader bf = new BufferedReader(file);
+		while(true)
+		{
+			int rank,kor,eng,math; String name;
+			ScoreDTO dat = new ScoreDTO();
+			String line=bf.readLine();
+			if(line==null) 
+			// This line is not exception, it stops while loop
+			// when reading is finished.
+			{
+				System.out.println("File loaded.");
+				break;
+			}
+			rank=Integer.parseInt(line.substring(0,1));
+			name=line.substring(1,4);
+			kor=Integer.parseInt(line.substring(4,7));
+			eng=Integer.parseInt(line.substring(7,10));
+			math=Integer.parseInt(line.substring(10,13));
+			dat.setName(name);
+			dat.setRank(rank);
+			dat.setKor(kor);
+			dat.setEng(eng);
+			dat.setMath(math);
+			dat.setTot((double)(kor+eng+math));
+			dat.setAvrg(dat.getTot()/3);
+			if(dat.getAvrg()>=90 && dat.getAvrg()<=100)
+				dat.setGrade("A");
+			else if(dat.getAvrg()>=80 && dat.getAvrg()<90)
+				dat.setGrade("B");
+			else if(dat.getAvrg()>=70 && dat.getAvrg()<80)
+				dat.setGrade("C");
+			else if(dat.getAvrg()>=60 && dat.getAvrg()<70)
+				dat.setGrade("D");
+			else if(dat.getAvrg()<60)
+				dat.setGrade("F");
+			else 
+				dat.setGrade("WRONG SCORE");
+			list.add(dat);
+		}
+	}
+	public void Out()
+	{
+		System.out.println("  순위\t이름\t국어\t영어\t수학\t총점\t평균\t학점");
+		System.out.println("-----------------------------------"
+				+ "------------------------------");
+		Collections.sort(list);
+		for(ScoreDTO a:list)
+		{
+			System.out.print("   "+a.getRank()+"\t");
+			System.out.print(a.getName()+"\t");
+			System.out.print(a.getKor()+"\t");
+			System.out.print(a.getEng()+"\t");
+			System.out.print(a.getMath()+"\t");
+			System.out.printf("%.0f\t",a.getTot());
+			System.out.printf("%.2f\t",a.getAvrg());
+			System.out.print(" "+a.getGrade()+"\t");
+			System.out.println();
+		}
+	}
+	public void Del()
+	{
+		
+	}
+	public int ScanInt()
+	{
+		Scanner sc = new Scanner(System.in);
+		return sc.nextInt();
+	}
+}
+
+=========================================================================================
