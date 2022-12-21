@@ -6,7 +6,13 @@ java.util.Comparable;
 세개 클래스 사용
 
 -DTO 클래스에 Setter Getter만들고 implements로 인터페이스 Comparable에 연결함.
-
+-참고: Comparable의 compareTo와 Collections는 서로 연결되어 있다. compareTo로 ArrayList 호출자를 리턴시키면 
+그 값이 Collections로 전달되어 sort(Arraylist 호출자)로 불러올 수 있는 것.
+(예)
+-ArrayList<CLASSDTO> list = new ArrayList<CLASSDTO>();
+-CLASSDTO a:list // CLASSDTO String name >> list(ArrayList)
+-Comparable >> return name; (name >> list)
+-Collections.sort(list);
 [DTO 부분]
 ----------------------------------------------------------------------------------------
 import java.util.Comparable;
