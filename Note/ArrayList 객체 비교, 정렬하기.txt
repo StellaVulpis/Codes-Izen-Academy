@@ -16,25 +16,23 @@ public class DTO implements Comparable<CompareTo>
 	//------------------------------------------------------------------------------------------------------
 	...setter, getter 생략 (여기에 오면된다)
 	//------------------------------------------------------------------------------------------------------
+	// [문자정렬 방법]
 	@Override
 	// Comparing String variables
 	public int compareTo(CompareTo o)
 	{
 		return name.compareTo(o.name); // Descending
-		// return cp.name1.compareTo(name2); // Ascending
+		// return o.name.compareTo(name); // Ascending
 	}
   //-----------------------------------------------------
-	// Comparing int variables(Numbers)
+	// [숫자로 정렬 방법]
 	/*
-	 * public int compareTo(CompareTo cp)
-	{
-		if(num1 >= cp.num2)
+	 	if(avrg > o.avrg)
 			return -1;
-		else if(num1 == cp.num2)
-			return 0;
-		else
+		else if(avrg < o.avrg)
 			return 1;
-	}
+		else
+			return 0;
 	 * */
 	//------------------------------------------------------
 ----------------------------------------------------------------------------------------
