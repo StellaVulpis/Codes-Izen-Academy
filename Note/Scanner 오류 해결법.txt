@@ -1,0 +1,20 @@
+Scanner를 필드에 선언하고 Integer타입과 nextLine(공백포함 문자열) 타입을 동시에 받게되면 제대로 입력을
+받지 못하고 다음 스캐너가 생략되는 의미상 오류가 발생한다. 안전하게 Scanner를 사용하려면
+Scanner를 import한 뒤 사용할 메소드 내부에 생성자로 개별로 생성해줘야 한다.
+[예시]
+import java.util.Scanner;
+class
+{
+  public int intScan()
+  {
+    Scanner sc = new Scanner(System.in); // 스캐너 생성
+    return sc.nextInt();
+    // 스캐너 종료
+  }
+  public String strScan()
+  {
+    Scanner sc = new Scanner(System.in); // 스캐너 생성
+    return sc.nextLine();
+    // 스캐너 종료
+  }
+}
