@@ -1,0 +1,28 @@
+아래와 같이 
+
+class cls
+{
+ String field;
+...Set/Getter 생략
+In()
+{
+FileReader file = new FileReader("C:/1.txt");
+...
+setField(str.readLine(0,3));
+// 예외 발생 NullPointerException
+}
+}
+
+파일을 불러와서 데이터를 필드변수에 세터/게터에
+직접 대입 시 예외가 날 수 있다.
+
+안전하게 데이터를 저장하기 위해 메소드() 내부에서
+지역변수를 생성 후 값을 받아와서 세터로 넘겨준다.
+
+In()
+{
+String Local;
+...
+Local=str.readLine(0,3); 
+setField(Local);
+}
