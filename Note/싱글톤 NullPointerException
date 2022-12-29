@@ -1,0 +1,27 @@
+Singleton sg = Singleton.getInstance();
+sg.method1();
+했을 때 sg.method1이 Null이라며 NullPointerException이 발생한다.
+(Cannot invoke sg.method()1 because sg is null.)
+
+<오류 원인>
+
+1 class Singleton
+2 {
+3  private static Singleton instance = Singleton.getInstance();
+4  private Singleton() {}
+5  public Singleton getInstance()
+6  {
+7   return instance();
+8  }
+
+위의 코드의 3번줄을 보면 현재 싱글톤 클래스를 만들고있는 자체 싱글톤 클래스에서
+Singleton.getInstance로 싱글톤 객체를 호출하고 있다. 
+아직 생성도 되지 않았으므로 호출하면 값이 null이라서 실행할 수 없다.
+
+싱글톤 클래스를 만들때 getInstance() 라는 메서드를 만들어서 instance를 
+리턴 시키려면 반드시 싱글톤 클래스 맨 위에 
+
+private static Singleton instance = new Singleton(); 
+
+으로 new로 생성을 해줘야한다.
+ 
