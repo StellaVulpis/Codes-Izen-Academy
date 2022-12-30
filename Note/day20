@@ -1,0 +1,20 @@
+Static이 있으면 클래스가 쓰는 것.
+
+오버로딩: 같은 이름을 사용해서 메서드를 정의하는 것
+(scanf(String text){} | scanf(int num){})
+
+오버라이딩: 재정의 하는 것.
+-----------------------------
+interface CLS
+{
+public void method1(); 
+}
+// >>
+class CLASS 
+{ 
+@Override
+public void method1()
+{
+System.out.println(); 
+}
+-------------------------
