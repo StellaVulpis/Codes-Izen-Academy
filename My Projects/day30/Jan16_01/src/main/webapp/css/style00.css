@@ -1,0 +1,33 @@
+.page
+{
+    height:1080px;
+    width:1920px;
+    position:fixed;
+}
+.famguyJB
+{
+    height:150px;
+    width:150px;
+    position:absolute;
+    cursor:pointer;
+}
+#JB01
+{
+    margin-top:0px;
+    margin-left:0px;
+}
+#JB02
+{
+    margin-top:789px;
+    margin-left:0px;
+}
+#JB03
+{
+    margin-top:0px;
+    margin-left:1720px;
+}   
+#JB04
+{
+    margin-top:789px;
+    margin-left:1720px;
+}

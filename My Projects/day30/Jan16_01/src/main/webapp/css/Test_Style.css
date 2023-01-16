@@ -1,0 +1,18 @@
+#page
+{
+	background-image: url("https://i.imgur.com/gp2sNoV.jpeg");
+	background-color: transparent;
+	width:1920px;
+	height:1080px;
+	
+}
+h3
+{
+	color:red;
+}
+#lyrics
+{
+	font-weight:bold;
+	color:white;
+	
+}
